@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Play } from 'lucide-react'
 
 export default function Home() {
@@ -16,7 +17,15 @@ export default function Home() {
       <section className="mb-12">
         <h2 className="text-2xl font-bold mb-4">Featured Episode</h2>
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
-          <img src="/trees.jpg?height=400&width=800" alt="Featured Episode" className="w-full h-64 object-cover" />
+          <div className="relative w-full h-64">
+            <Image 
+              src="/trees.jpg" 
+              alt="Featured Episode" 
+              layout="fill" 
+              objectFit="cover" 
+              className="w-full h-64 object-cover"
+            />
+          </div>
           <div className="p-4">
             <h3 className="text-xl font-semibold mb-2">The Secret Life of Trees</h3>
             <p className="text-gray-600 mb-4">Discover the hidden world of forest communication and how trees support each other.</p>

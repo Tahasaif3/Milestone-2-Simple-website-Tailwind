@@ -1,11 +1,12 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 const episodes = [
   { 
     id: 1, 
     title: "The Secret Life of Trees", 
     description: "Discover the hidden world of forest communication.",
-    image: "/trees.jpg" 
+    image: "/trees.jpg"
   },
   { 
     id: 2, 
@@ -47,9 +48,11 @@ export default function Episodes() {
         {episodes.map((episode) => (
           <div key={episode.id} className="bg-white rounded-lg shadow-md overflow-hidden">
             <div className="relative w-full h-48">
-              <img 
+              <Image 
                 src={episode.image} 
                 alt={episode.title} 
+                layout="fill"
+                objectFit="cover"
                 className="object-cover w-full h-full" 
               />
             </div>
